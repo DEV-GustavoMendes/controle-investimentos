@@ -26,14 +26,17 @@ Sistema desenvolvido em Go para gerenciamento de investimentos, com interface we
 ## Requisitos
 
 - Go 1.16 ou superior
+```bash
+sudo apt-get install golang
+```
 - Navegador web moderno
 
 ## Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/investimentos-go.git
-cd investimentos-go
+git clone https://github.com/DEV-GustavoMendes/controle-investimentos-fullstack
+cd controle-investimentos-fullstack
 ```
 
 2. Instale as dependências:

@@ -40,10 +40,10 @@
                 <input type="text" id="valor" class="number-input" placeholder="R$ 0,00" required>
                 
                 <label for="dataInicio">Data de Início:</label>
-                <input type="text" id="dataInicio" class="datepicker" placeholder="Dia/Mês/Ano" required>
+                <input type="text" id="dataInicio" class="datepicker" placeholder="DD/MM/AAAA" required>
                 
                 <label for="dataVencimento">Data de Vencimento:</label>
-                <input type="text" id="dataVencimento" class="datepicker" placeholder="Dia/Mês/Ano" required>
+                <input type="text" id="dataVencimento" class="datepicker" placeholder="DD/MM/AAAA" required>
 
                 <button type="submit">Cadastrar</button>
             </form>
@@ -55,7 +55,10 @@
             
             <!-- Barra de Pesquisa -->
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Pesquisar investimentos...">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Pesquisar investimentos...">
+                    <button type="submit">Buscar</button>
+                </form>
             </div>
             
             <table id="tabelaInvestimentos">

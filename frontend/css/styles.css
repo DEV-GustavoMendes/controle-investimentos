@@ -255,4 +255,31 @@ td button:hover {
 }
 
 
+/* Flatpickr*/
+input[type="text"].datepicker {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 120px; /* Garante um tamanho mínimo para o input */
+}
+
+/* Ajuste específico para o placeholder em telas menores */
+@media (max-width: 600px) {
+    input[type="text"].datepicker {
+        font-size: 12px;
+        padding: 6px;
+        min-width: 100px;
+    }
+    
+    input[type="text"].datepicker::placeholder {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
 

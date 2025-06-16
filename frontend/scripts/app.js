@@ -254,13 +254,50 @@ document.getElementById('searchForm').addEventListener('submit', async function(
     e.preventDefault();
     const termo = document.getElementById('searchInput').value.trim();
     
+    if (!termo) {
+        // Se o termo estiver vazio, carrega todos os investimentos
+        await atualizarDados();
+        return;
+    }
+    
     try {
         const response = await fetch(`${API_URL}/buscar?termo=${encodeURIComponent(termo)}`);
+        if (!response.ok) {
+            throw new Error('Erro na busca');
+        }
         const investimentos = await response.json();
+        
+        if (investimentos.length === 0) {
+            mostrarErro('Nenhum investimento encontrado com os critérios informados.');
+        }
+        
         atualizarTabela(investimentos);
         criarGrafico(investimentos);
     } catch (error) {
         console.error('Erro na busca:', error);
+        mostrarErro('Erro ao realizar a busca. Por favor, tente novamente.');
+    }
+});
+
+// Adiciona busca em tempo real
+document.getElementById('searchInput').addEventListener('input', async function(e) {
+    const termo = this.value.trim();
+    
+    if (termo.length >= 2) { // Busca após digitar pelo menos 2 caracteres
+        try {
+            const response = await fetch(`${API_URL}/buscar?termo=${encodeURIComponent(termo)}`);
+            if (!response.ok) {
+                throw new Error('Erro na busca');
+            }
+            const investimentos = await response.json();
+            atualizarTabela(investimentos);
+            criarGrafico(investimentos);
+        } catch (error) {
+            console.error('Erro na busca:', error);
+        }
+    } else if (termo.length === 0) {
+        // Se o campo estiver vazio, carrega todos os investimentos
+        await atualizarDados();
     }
 });
 

@@ -40,9 +40,14 @@ func Search(term string) ([]models.Investimento, error) {
 	query := `
 		SELECT id, nome, tipo, valor, data_inicio, data_vencimento 
 		FROM investimentos 
-		WHERE nome LIKE ? OR tipo LIKE ? OR valor LIKE ?`
+		WHERE LOWER(nome) LIKE LOWER(?) 
+		OR LOWER(tipo) LIKE LOWER(?) 
+		OR CAST(valor AS TEXT) LIKE ?
+		OR data_inicio LIKE ?
+		OR data_vencimento LIKE ?`
 
-	rows, err := db.DB.Query(query, "%"+term+"%", "%"+term+"%", "%"+term+"%")
+	searchTerm := "%" + term + "%"
+	rows, err := db.DB.Query(query, searchTerm, searchTerm, searchTerm, searchTerm, searchTerm)
 	if err != nil {
 		return nil, err
 	}
@@ -67,7 +72,6 @@ func Search(term string) ([]models.Investimento, error) {
 
 	return investimentos, nil
 }
-
 
 // CRUD
 func Create(inv models.Investimento) (int64, error) {

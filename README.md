@@ -35,7 +35,7 @@ sudo apt-get install golang
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/DEV-GustavoMendes/controle-investimentos-fullstack
+git clone https://github.com/DEV-GustavoMendes/gestao-investimento
 cd controle-investimentos-fullstack
 ```
 

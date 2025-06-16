@@ -53,6 +53,13 @@ go run main.go
 
 ## Estrutura do Projeto
 
+
+- `/frontend`: Contém todos os arquivos do frontend (HTML, CSS, JavaScript)
+- `/handlers`: Contém os handlers da API em Go
+- `main.go`: Arquivo principal do backend
+- `investimentos.db`: Banco de dados SQLite
+
+
 ```
 investimentos-go/
 ├── frontend/
@@ -66,5 +73,6 @@ investimentos-go/
 ├── main.go
 └── README.md
 ```
+
 
 

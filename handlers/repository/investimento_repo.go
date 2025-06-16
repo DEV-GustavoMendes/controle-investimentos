@@ -26,7 +26,7 @@ func GetAll() ([]models.Investimento, error) {
 			continue
 		}
 
-		// Converter strings para time.Time
+		// Converte strings para time
 		inv.DataInicio, _ = time.Parse("2006-01-02", dataInicioStr)
 		inv.DataVencimento, _ = time.Parse("2006-01-02", dataVencimentoStr)
 
@@ -115,7 +115,6 @@ func GetByID(id int) (*models.Investimento, error) {
 		return nil, err
 	}
 
-	// Converte strings para time.Time
 	inv.DataInicio, _ = time.Parse("2006-01-02", dataInicioStr)
 	inv.DataVencimento, _ = time.Parse("2006-01-02", dataVencimentoStr)
 

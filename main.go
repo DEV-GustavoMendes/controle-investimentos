@@ -9,21 +9,18 @@ import (
 )
 
 func main() {
-	// Inicializa o banco de dados
+
 	if err := db.InitDB(); err != nil {
 		log.Fatalf("Falha ao inicializar o banco: %v", err)
 	}
 
-	// Configura o modo de produção
 	gin.SetMode(gin.ReleaseMode)
 
-	// Configura o router Gin
 	r := gin.Default()
 
-	// Configura confiança de proxies
 	r.SetTrustedProxies([]string{"127.0.0.1"})
 
-	// Configura CORS para permitir seu frontend
+
 	r.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
@@ -35,7 +32,7 @@ func main() {
 		c.Next()
 	})
 
-	// Rotas da API
+
 	api := r.Group("/api")
 	{
 		api.GET("/investimentos", handlers.ListarInvestimentos)
@@ -46,7 +43,7 @@ func main() {
 		api.DELETE("/investimentos/:id", handlers.DeletarInvestimento)
 	}
 
-	// Servir arquivos estáticos (se necessário)
+	
 	r.Static("/static", "./static")
 
 	log.Println("Servidor rodando na porta 8080")

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Investimentos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="assets/svg/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro de Investimentos</h1>
+        </header>
+
+        <!-- Tela de Cadastro -->
+        <section id="cadastro">
+            <img src="assets/svg/gfinnovation-logo.svg" alt="Logo da empresa GF Innovation" id="logo">
+
+            <form id="formCadastro">
+                <label for="nome">Nome do Investimento:</label>
+                <input type="text" id="nome" placeholder="Exemplo: MGLU3" required>
+                
+                <label for="tipo">Tipo de Investimento:</label>
+                <select id="tipo" required>
+                    <option value="">Selecione o tipo</option>
+                    <option value="CDB">CDB</option>
+                    <option value="LCI">LCI</option>
+                    <option value="LCA">LCA</option>
+                    <option value="Tesouro Direto">Tesouro Direto</option>
+                    <option value="Ações">Ações</option>
+                    <option value="Fundos Imobiliários">Fundos Imobiliários</option>
+                    <option value="Poupança">Poupança</option>
+                </select>
+                
+                <label for="valor">Valor Investido:</label>
+                <input type="text" id="valor" class="number-input" placeholder="R$ 0,00" required>
+                
+                <label for="dataInicio">Data de Início:</label>
+                <input type="text" id="dataInicio" class="datepicker" placeholder="Dia/Mês/Ano" required>
+                
+                <label for="dataVencimento">Data de Vencimento:</label>
+                <input type="text" id="dataVencimento" class="datepicker" placeholder="Dia/Mês/Ano" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Tabela dos Investimentos Cadastrados -->
+        <section id="listagem">
+            <h2>Investimentos Cadastrados</h2>
+            
+            <!-- Barra de Pesquisa -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Pesquisar investimentos...">
+            </div>
+            
+            <table id="tabelaInvestimentos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Data Início</th>
+                        <th>Data Vencimento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão inseridos via JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Gráfico de Investimentos -->
+        <section id="grafico">
+            <h2>Visualização dos Investimentos</h2>
+            <div class="chart-container">
+                <canvas id="investmentsChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

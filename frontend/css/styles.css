@@ -1,0 +1,258 @@
+/* Configurações Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: #000B58;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.03s; 
+}
+
+button:hover {
+    background-color: #003161;
+}
+
+#cadastro, #listagem {
+    border: 1px solid #c0c0c0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+}
+
+/* Formulário */
+form {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 10fr; /* Altera o número de grades */
+}
+
+form label {
+    color: #333333;
+    font-size: 1.1em;
+}
+
+/* Cabeçalho */
+header {
+    background-color: none;
+    color: rgb(3, 3, 3);
+    padding: 20px 0;
+    text-align: center;
+}
+
+input, select, button {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 10px;    
+}
+
+
+#logo{
+    padding: 5px;
+    width: 200px;   
+}
+
+select {
+    max-width: 99%;
+}
+
+input {
+    max-width: 950px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;  
+}
+
+h2 {
+    color: #333;
+    font-size: 1.6em;
+    margin-top: 0;
+}
+
+section {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0..1);
+    margin: 30px 0;
+    padding: 8px;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+/* Tabela de Listagem */
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    overlay: auto;
+    width: 100%;
+}
+
+th, td {
+    font-weight: bold;
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333333;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+    color: #555;
+}
+
+td button {
+    background-color: #000B58;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+td button:hover {
+    background-color: #003161;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Responsividade em ordem crescente */
+
+/* ----- Responsividade - Celular ----- */
+@media (min-width: 600px){
+
+    #investmentsChart {
+        margin: 0 auto;
+        min-width: 200px; /* Ajuste o tamanho máximo do gráfico */
+        width: 100%; /* Garante que o gráfico ocupe a largura disponível */
+      }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    table {
+        font-size: 12px;
+        overflow-x: auto;
+    }
+    
+    td button {
+        font-size: 12px;
+    }   
+}
+
+/* ----- Responsividade - Tablet ----- */
+@media (max-width: 1024px) {
+
+    #investmentsChart {
+        margin: 0 auto;
+        max-width: 500px; /* Ajuste o tamanho máximo do gráfico */
+        width: 100%; /* Garante que o gráfico ocupe a largura disponível */
+      }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        width: 90%
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    table {
+        font-size: 14px;
+        overflow-x: auto;
+    }
+
+    td button {
+        font-size: 14px;
+    }  
+}
+
+
+/* ----- Responsividade - Telas Grandes ----- */
+@media (min-width: 1025px) {
+
+    #investmentsChart {
+        margin: 0 auto;
+        max-width: 700px; /* Ajuste o tamanho máximo do gráfico */
+        width: 100%; /* Garante que o gráfico ocupe a largura disponível */
+      }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    input, select, button, table, td button {
+        font-size: 16px;
+    }
+   
+    section h2 {
+        font-size: 1.6em;
+    }  
+}
+
+/* Estilos para o gráfico */
+#grafico {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#investmentsChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+
